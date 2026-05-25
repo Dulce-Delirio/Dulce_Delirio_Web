@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Delirio | Fresas con crema</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+<nav>
+     <div class="nav-container">
+            <a href="index.html">
+              <div class="logo">Dulce Delirio</div>
+            </a>
+            
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="menu">
+                <li><a href="Fresas con crema.html">Fresas con crema</a></li>
+                <li><a href="Frappes.html">Frappes</a></li>
+                <li><a href="MiniHotcakes.html">MiniHotcakes</a></li>
+                <li><a href="crepas.html">Crepas</a></li>
+                <li><a href="Chocomilk.html">Chocomilk</a></li>
+            </ul>
+        </div>
+        
+        <!-- ÍCONO CARRITO MEJORADO -->
+        <div class="icono_carrito">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+            </svg>
+            <span class="contador-carrito">0</span>
+        </div>
+    </nav>
+
+    <!-- CARRITO MEJORADO -->
+    <div class="menucarrito" id="menucarrito">
+        <div class="header-carrito">
+            <h1>Carrito de Compras</h1>
+            <button class="cerrar" id="cerrarCarrito">✕</button>
+        </div>
+        
+        <div class="contenido-carrito">
+            <div class="listacarrito" id="listacarrito"></div>
+            <div class="total-carrito" id="totalCarrito">
+                <div class="total-info">
+                    <span>Total productos:</span>
+                    <span class="total-items" id="totalItems">0</span>
+                </div>
+                <div class="total-info">
+                    <span>Total a pagar:</span>
+                    <span class="total-precio" id="totalPrecio">$0.00</span>
+                </div>
+            </div>
+        </div>
+     
+        <div class="botoncarrito">
+            <button class="cerrar" id="btnVaciar">Vaciar Carrito</button>
+            <button class="continuar" id="btnContinuar">CONTINUAR ➜</button>
+        </div>
+    </div>
+
+    <!-- HERO Fresas con crema -->
+    <div class="hero">
+        <div class="hero-tag">Menú del día</div>
+        <h1>Antojitos Endulzantes</h1>
+        <p>Pequeños antojos, grandes momentos🍓🍓</p>
+    </div>
+
+    <section>
+        <h2 class="section-title">Fresas con crema</h2>
+        <div class="grid">
+ 
+            <!-- Fresas con crema -->
+            <div class="card" data-nombre="Fresas con crema Lotus chico" data-precio="35.00" data-imagen="Imagenes/Fresa con crema 4.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 4.png" alt="Fresas con crema Lotus chico">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema Lotus chico</div>
+                    <div class="card-desc">El postre que no sabías que necesitabas. Cremoso, dulce y con ese toque irresistible de Lotus...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$35.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card" data-nombre="Fresas con crema Lotus grande" data-precio="60.00" data-imagen="Imagenes/Fresa con crema 4.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 4.png" alt="Fresas con crema Lotus grande">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema Lotus Grande</div>
+                    <div class="card-desc">El postre que no sabías que necesitabas. Cremoso, dulce y con ese toque irresistible de Lotus...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$60.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        <!-- Fresas con crema oreo-->
+            <div class="card" data-nombre="Fresas con crema Oreo chico" data-precio="35.00" data-imagen="Imagenes/Fresa con crema 3.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 3.png" alt="Fresa con crema Oreo chico">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema Oreo chico</div>
+                    <div class="card-desc">Fresas con crema, y galletas oreo desboronadas encima, delicia...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$35.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        <!-- Fresas con crema oreo-->
+            <div class="card" data-nombre="Fresas con crema Oreo grande" data-precio="55.00" data-imagen="Imagenes/Fresa con crema 3.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 3.png" alt="Fresa con crema Oreo grande">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema Oreo chico</div>
+                    <div class="card-desc">Fresas con crema, con galletas oreo desboronadas encima, delicia...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$55.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        <!-- Fresas con crema mazapan -->
+            <div class="card" data-nombre="Fresas con crema mazapan chico" data-precio="35.00" data-imagen="Imagenes/Fresa con crema 2.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 2.png" alt="Fresas con crema mazapan chico">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema mazapan chico</div>
+                    <div class="card-desc">La mezcla perfecta entre crema clásica, fresas frescas y el toque crunchy de mazapán que amamos...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$35.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                          <!-- Fresas con crema mazapan -->
+            <div class="card" data-nombre="Fresas con crema mazapan grande" data-precio="55.00" data-imagen="Imagenes/Fresa con crema 2.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 2.png" alt="Fresas con crema mazapan grande">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema mazapan grande</div>
+                    <div class="card-desc">La mezcla perfecta entre crema clásica, fresas frescas y el toque crunchy de mazapán que amamos...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$55.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        <!-- Fresas con crema nutella-->
+            <div class="card" data-nombre="Fresas con crema nutella chico" data-precio="35.00" data-imagen="Imagenes/Fresas con crema 1.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresas con crema 1.png" alt="Fresas con crema nutella chico">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema nutella chico</div>
+                    <div class="card-desc">Unas ricas fresas con crema, con gran sabor a nutella, la calsica crema y cubiertas de kinder bueno...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$35.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        <!-- Fresas con crema nutella-->
+            <div class="card" data-nombre="Fresas con crema nutella grande" data-precio="55.00" data-imagen="Imagenes/Fresas con crema 1.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresas con crema 1.png" alt="Fresas con crema nutella grande">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema nutella grande</div>
+                    <div class="card-desc">Unas ricas fresas con crema, con gran sabor a nutella, la calsica crema y cubiertas de kinder bueno...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$55.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        <!-- Fresas con crema clasicas -->
+            <div class="card" data-nombre="Fresas con crema clasicas chico" data-precio="35.00" data-imagen="Imagenes/Fresa con crema 5.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 5.png" alt="Fresas con crema clasicas chico">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema clasicas chico</div>
+                    <div class="card-desc">Las clasicas fresas con crema clasica, mucha fresa, mucha delicia...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$35.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        <!-- Fresas con crema clasicas -->
+            <div class="card" data-nombre="Fresas con crema clasicas grande" data-precio="50.00" data-imagen="Imagenes/Fresa con crema 5.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 5.png" alt="Fresas con crema clasicas grande">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema clasicas grande</div>
+                    <div class="card-desc">Las clasicas fresas con crema clasica, mucha fresa, mucha delicia...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$50.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                                    <!-- Fresas con crema clasicas -->
+            <div class="card" data-nombre="Fresas con crema clasicas grande" data-precio="50.00" data-imagen="Imagenes/Fresa con crema 5.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 5.png" alt="Fresas con crema clasicas grande">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema clasicas grande</div>
+                    <div class="card-desc">Las clasicas fresas con crema clasica, mucha fresa, mucha delicia...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$50.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                                    <!-- Fresas con crema clasicas -->
+            <div class="card" data-nombre="Fresas con crema clasicas grande" data-precio="50.00" data-imagen="Imagenes/Fresa con crema 5.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Fresa con crema 5.png" alt="Fresas con crema clasicas grande">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Fresas con crema clasicas grande</div>
+                    <div class="card-desc">Las clasicas fresas con crema clasica, mucha fresa, mucha delicia...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$50.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dulce Delirio - Todos los derechos reservados</p>
+        <div class="social">
+            <a href="https://www.tiktok.com/@dulce.delirio24?_r=1&_t=ZS-96da63ziMsO" target="_blank" class="icon tiktok">
+                <img src="Imagenes/tik_tok_logo.ico" alt="tiktok" width="30px">
+            </a>
+            <a href="https://www.facebook.com/share/1REwv1RBnF/" target="_blank" class="icon facebook">
+                <img src="Imagenes/facebook.ico" alt="facebook" width="30px">
+            </a>
+            <a href="https://www.instagram.com/dulce_delirio_st?igsh=aW96b2JnZzVnOTBy" target="_blank" class="icon instagram">
+                <img src="Imagenes/insta.ico" alt="instagram" width="30px">
+            </a>
+        </div>
+    </footer>
+
+<script src="JS/script.js"></script>
+
+</body>
+</html>

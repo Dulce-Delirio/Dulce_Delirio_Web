@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Clientes | Dulce Delirio</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Dulce Delirio</div>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="registros.html">Registro</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-content">
+      <h1>Registro de Clientes</h1>
+      <p>Completa tus datos para disfrutar de nuestras delicias artesanales.</p>
+    </div>
+  </header>
+
+  <!-- FORMULARIO DE REGISTRO -->
+  <main>
+    <section id="registro" class="fondo-claro">
+      <h2 class="titulo-seccion">Formulario de Registro</h2>
+      <form id="form-registro" class="registro-card">
+        <label for="nombre">👤 Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">📧 Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefono">📞 Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <label for="direccion">🏠 Dirección:</label>
+        <textarea id="direccion" name="direccion" rows="3" required></textarea>
+
+        <button type="submit" class="btn-principal">Registrar</button>
+      </form>
+
+      <!-- Aquí se mostrarán los datos registrados -->
+      <div id="cliente-info" class="cliente-card"></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Dulce Delirio - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- SCRIPT -->
+<script>
+document.getElementById("form-registro").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    // ✅ GUARDAR DATOS DEL CLIENTE
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const telefono = document.getElementById("telefono").value;
+    const direccion = document.getElementById("direccion").value;
+
+    const cliente = {nombre, email, telefono, direccion, fecha: new Date().toLocaleDateString()};
+    localStorage.setItem("cliente", JSON.stringify(cliente));
+
+    // 🚀 VERIFICAR SI HAY CARRITO Y ENVIAR A WHATSAPP
+    const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
+    
+    if (carrito.length > 0) {
+        // Mensaje con CARRITO
+        const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+        const totalPrecio = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+        
+        const mensaje = `🌸 *NUEVA ORDEN - Dulce Delirio* 🌸
+
+👤 *Cliente:* ${nombre}
+📧 *Email:* ${email}
+📞 *Teléfono:* ${telefono}
+🏠 *Dirección:* ${direccion}
+
+🛒 *PEDIDO:*
+${carrito.map(item => `• ${item.nombre} (x${item.cantidad}) - $${(item.precio * item.cantidad).toLocaleString()}`).join('\n')}
+
+💰 *TOTAL: $${totalPrecio.toLocaleString()}*
+📦 *Productos:* ${totalItems}
+
+¡Gracias por tu compra! 😊`;
+
+        // ⚠️ CAMBIA ESTE NÚMERO
+        const numeroWhatsApp = "524622711860";
+        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+        
+        // ✅ LIMPIAR CARRITO + ABRIR WHATSAPP
+        localStorage.removeItem('carrito');
+        window.open(urlWhatsApp, '_blank');
+        
+        // Mostrar confirmación
+        document.getElementById("cliente-info").innerHTML = `
+            <h3>✅ ¡Orden enviada a WhatsApp!</h3>
+            <p>Tu pedido ya está en camino 😊</p>
+            <a href="index.html" class="btn-principal" style="margin-top: 20px;">🏠 Volver al menú</a>
+        `;
+        
+    } else {
+        // Solo registro sin carrito
+        document.getElementById("cliente-info").innerHTML = `
+            <h3>✅ ¡Registro Exitoso!</h3>
+            <p>¡Gracias por registrarte en Sweet Healthy!</p>
+            <a href="index.html" class="btn-principal" style="margin-top: 20px;">🏠 Ir al menú</a>
+        `;
+    }
+    
+    document.getElementById("cliente-info").style.display = "block";
+    document.getElementById("cliente-info").scrollIntoView({behavior: 'smooth'});
+    this.reset();
+});
+
+// Cargar datos previos
+window.onload = function() {
+    const clienteGuardado = JSON.parse(localStorage.getItem("cliente"));
+    if(clienteGuardado){
+        document.getElementById("cliente-info").innerHTML = `
+            <h3>👤 Ya estás registrado</h3>
+            <p><strong>Nombre:</strong> ${clienteGuardado.nombre}</p>
+            <p><strong>Teléfono:</strong> ${clienteGuardado.telefono}</p>
+            <a href="index.html" class="btn-principal" style="margin-top: 20px;">🛒 Ir a comprar</a>
+        `;
+        document.getElementById("cliente-info").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
+

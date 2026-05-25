@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Delirio | Delicias Artesanales</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="https://kit.fontawesome.com/dfce23e0a8.js" crossorigin="anonymous"></script> </script>
+</head>
+
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">
+              <div class="logo">Dulce Delirio</div> 
+            </a>
+            
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="menu">
+                <li><a href="Fresas con crema.html">Fresas con crema</a></li>
+                <li><a href="Frappes.html">Frappes</a></li>
+                <li><a href="MiniHotcakes.html">MiniHotcakes</a></li>
+                <li><a href="crepas.html">Crepas</a></li>
+                <li><a href="Chocomilk.html">Chocomilk</a></li>
+            </ul>
+        </div>
+
+        <div class="icono_carrito">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+            </svg>
+            <span class="contador-carrito">0</span>
+        </div>
+    </nav>
+
+    <!-- CARRITO MEJORADO -->
+    <div class="menucarrito" id="menucarrito">
+        <div class="header-carrito">
+            <h1>Carrito de Compras</h1>
+            <button class="cerrar" id="cerrarCarrito">✕</button>
+        </div>
+        
+        <div class="contenido-carrito">
+            <div class="listacarrito" id="listacarrito"></div>
+            <div class="total-carrito" id="totalCarrito">
+                <div class="total-info">
+                    <span>Total productos:</span>
+                    <span class="total-items" id="totalItems">0</span>
+                </div>
+                <div class="total-info">
+                    <span>Total a pagar:</span>
+                    <span class="total-precio" id="totalPrecio">$0.00</span>
+                </div>
+            </div>
+        </div>
+     
+        <div class="botoncarrito">
+            <button class="cerrar" id="btnVaciar">Vaciar Carrito</button>
+            <button class="continuar" id="btnContinuar">CONTINUAR ➜</button>
+        </div>
+    </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <h1>Dulce Delirio</h1>
+            <p>Endulzamos tus momentos especiales con el sabor de Dulce Delirio.</p>
+            <p>Un antojo no se explica... Se disfruta🖤🍫</p>
+            <a href="#Crepas" class="btn-principal">Ver Menú</a>
+        </div>
+    </header>
+
+
+
+    <main>
+        <section id="Crepas">
+            <h2 class="titulo-seccion">Nuestras crepas</h2>
+            <a href="index/crepas.html">
+            <div class="productos-grid">
+                <div class="tarjeta">
+                    <img src="Imagenes/CREPA.jpeg" alt="Crepas">
+                    <div class="tarjeta-info">
+                        <h3>Crepas llenas de fruta</h3>
+                        <p class="precio"></p>
+                    </div>
+                </div> 
+    
+            </a> 
+            </div>
+        </section>
+
+
+
+        <section id="Fresas con crema" class="fondo-claro">
+            <h2 class="titulo-seccion">Fresas con crema bien dulces y Yogurts</h2>
+            <a href="Fresas con crema.html">
+            <div class="productos-grid">
+                <div class="tarjeta">
+                    <img src="Imagenes/FRESAS CON CREMA.jpeg" alt="Fresas con crema">
+                    <div class="tarjeta-info">
+                        <h3>Fresa con crema de distntos dulces y yogurts...</h3>
+                        <p class="precio"></p>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="Frappes" class="fondo-claro">
+            <h2 class="titulo-seccion">Frappes frescos</h2>
+            <a href="Frappes.html">
+            <div class="productos-grid">
+                <div class="tarjeta">
+                    <img src="Imagenes/FRAPPE.jpeg" alt="Frappe">
+                    <div class="tarjeta-info">
+                        <h3>Frappes Capuchino, etc...</h3>
+                        <p class="precio"></p>
+                    </div>
+                </div>
+            </a>
+            </div>
+        </section>
+
+        <section id="MiniHotcakes">
+            <h2 class="titulo-seccion">MiniHotcakes</h2>
+            <a href="MiniHotcakes.html">
+            <div class="productos-grid">
+                <div class="tarjeta">
+                    <img src="Imagenes/MINIHOTCAKES.jpeg" alt="MiniHotcakes">
+                    <div class="tarjeta-info">
+                        <h3>MiniHotcakes bien ricos...</h3>
+                        <p class="precio"></p>
+                    </div>
+                </div>
+            </a>
+            </div>
+        </section>
+
+
+
+        <section id="Chocomilk" class="fondo-claro">
+            <h2 class="titulo-seccion">Chocomilks</h2>
+            <a href="Chocomilk.html">
+            <div class="productos-grid">
+                <div class="tarjeta">
+                    <img src="Imagenes/CHOCOMILK.jpeg" alt="Chocomilk">
+                    <div class="tarjeta-info">
+                        <h3>Chocomilks, fresa, vainilla chocolate...</h3>
+                        <p class="precio"></p>
+                    </div>
+                </div>
+            </a>
+            </div>
+        </section>
+
+    
+
+        <section id="contacto">
+            <div class="contacto-card">
+                <h2>¿Tienes un antojo?</h2>
+                <h3>Tambien puedes encontratarnos en:</h3>
+                <div class="map-container">
+                <p><iframe src="https://www.google.com/maps/embed?pb=!4v1776105855088!6m8!1m7!1sIVZvzUna9zKDZf_RLf2Ffg!2m2!1d20.61573920820256!2d-101.3971852295521!3f3.2044931068484175!4f-1.8989075037518148!5f0.40098360711451597" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                </div>
+                <p>📞 <strong>WhatsApp:</strong> 442 123 4567</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dulce Delirio - Todos los derechos reservados</p>
+        <!--Por el momento no cuentan con red social oficiales asi que usamos una de prueba-->
+        <div class="social">
+            <a href="https://www.tiktok.com/@dulce.delirio24?_r=1&_t=ZS-96da63ziMsO" target="_blank" class="icon tiktok">
+                <img src="Imagenes/tik_tok_logo.ico" alt="tiktok" width="30px">
+            </a>
+            <a href="https://www.facebook.com/share/1REwv1RBnF/" taget="_blank" class="icon facebook">
+                <img src="Imagenes/facebook.ico" alt="facebook" width="30px">
+            </a>
+            <a href="https://www.instagram.com/dulce_delirio_st?igsh=aW96b2JnZzVnOTBy" taget="_blank" class="icon instagram">
+                <img src="Imagenes/insta.ico" alt="instagram" width="30px">
+            </a>
+        </div>
+    </footer>
+
+
+<script src="JS/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Delirio | Crepas</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+<nav>
+     <div class="nav-container">
+            <a href="index.html">
+              <div class="logo">Dulce Delirio</div>
+            </a>
+            
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="menu">
+                <li><a href="Fresas con crema.html">Fresas con crema</a></li>
+                <li><a href="Frappes.html">Frappes</a></li>
+                <li><a href="MiniHotcakes.html">MiniHotcakes</a></li>
+                <li><a href="crepas.html">Crepas</a></li>
+                <li><a href="Chocomilk.html">Chocomilk</a></li>
+            </ul>
+        </div>
+        
+        <!-- ÍCONO CARRITO MEJORADO -->
+        <div class="icono_carrito">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+            </svg>
+            <span class="contador-carrito">0</span>
+        </div>
+    </nav>
+
+    <!-- CARRITO MEJORADO -->
+    <div class="menucarrito" id="menucarrito">
+        <div class="header-carrito">
+            <h1>Carrito de Compras</h1>
+            <button class="cerrar" id="cerrarCarrito">✕</button>
+        </div>
+        
+        <div class="contenido-carrito">
+            <div class="listacarrito" id="listacarrito"></div>
+            <div class="total-carrito" id="totalCarrito">
+                <div class="total-info">
+                    <span>Total productos:</span>
+                    <span class="total-items" id="totalItems">0</span>
+                </div>
+                <div class="total-info">
+                    <span>Total a pagar:</span>
+                    <span class="total-precio" id="totalPrecio">$0.00</span>
+                </div>
+            </div>
+        </div>
+     
+        <div class="botoncarrito">
+            <button class="cerrar" id="btnVaciar">Vaciar Carrito</button>
+            <button class="continuar" id="btnContinuar">CONTINUAR ➜</button>
+        </div>
+    </div>
+
+    <!-- HERO CREPAS -->
+    <div class="hero">
+        <div class="hero-tag">Menú del día</div>
+        <h1>Antojitos Endulsantes</h1>
+        <p>Pequeños antojos, grandes momentos🍓🍓</p>
+    </div>
+
+    <section>
+        <h2 class="section-title">Crepas</h2>
+        <div class="grid">
+
+            <!-- CREPA 1 -->
+            <div class="card" data-nombre="Crepa pura Fresa" data-precio="65.00" data-imagen="Imagenes/Crepa 1.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Crepa 1.png" alt="Crepa pura Fresa">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Crepa pura Fresa</div>
+                    <div class="card-desc">Crepa cubierta de fresa, glaceado de chocolate y mucha lechera...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$65.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CREPA 2 -->
+            <div class="card" data-nombre="Crepa de 3 frutas" data-precio="65.00" data-imagen="Imagenes/Crepa 2.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Crepa 2.png" alt="Crepa de 3 frutas">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Crepa de 3 frutas</div>
+                    <div class="card-desc">Crepa cubierta de 3 diferentes frutas, manzana platano y fresa...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$65.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CREPA 3 -->
+            <div class="card" data-nombre="Crepa puro platano" data-precio="65.00" data-imagen="Imagenes/Crepa 3.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Crepa 3.png" alt="Crepa puro platano">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Crepa puro platano</div>
+                    <div class="card-desc">Crepa mediana cubierta de puras rodajas de platano y glaceado de chocolate...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$65.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        <!-- CREPA 4 -->
+            <div class="card" data-nombre="Crepa pura manzana" data-precio="65.00" data-imagen="Imagenes/Crepa 4.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Crepa 4.png" alt="Crepa pura manzana">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Crepa pura manzana</div>
+                    <div class="card-desc">Crepa mediana cubierta de solo rodajas de manzana, y miel...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$65.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+                       <!-- CREPA 5 -->
+            <div class="card" data-nombre="Crepa en vaso" data-precio="65.00" data-imagen="Imagenes/Crepa 5.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Crepa 5.png" alt="Crepa en vaso">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Crepa en vaso</div>
+                    <div class="card-desc">Crepa delicia en vaso hecha de fresa-kinder...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$65.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+                       <!-- waffle 1 -->
+            <div class="card" data-nombre="Waffle de 3 frutas" data-precio="60.00" data-imagen="Imagenes/Waffle 1.png">
+                <div class="card-img-wrap">
+                    <img src="Imagenes/Waffle 1.png" alt="Waffle de 3 frutas">
+                </div>
+                <div class="card-body">
+                    <div class="card-name">Waffle de 3 frutas</div>
+                    <div class="card-desc">Waffle calientito, con una cubierta de 3 frutas, manzana, platano y fresa con chocolate...</div>
+                    <div class="card-footer">
+                        <span class="card-price">$60.00</span>
+                        <button class="add-btn">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dulce Delirio - Todos los derechos reservados</p>
+        <div class="social">
+            <a href="https://www.tiktok.com/@dulce.delirio24?_r=1&_t=ZS-96da63ziMsO" target="_blank" class="icon tiktok">
+                <img src="Imagenes/tik_tok_logo.ico" alt="tiktok" width="30px">
+            </a>
+            <a href="https://www.facebook.com/share/1REwv1RBnF/" target="_blank" class="icon facebook">
+                <img src="Imagenes/facebook.ico" alt="facebook" width="30px">
+            </a>
+            <a href="https://www.instagram.com/dulce_delirio_st?igsh=aW96b2JnZzVnOTBy" target="_blank" class="icon instagram">
+                <img src="Imagenes/insta.ico" alt="instagram" width="30px">
+            </a>
+        </div>
+    </footer>
+
+<script src="JS/script.js"></script>
+
+</body>
+</html>
