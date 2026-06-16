@@ -60,16 +60,34 @@
   <!-- SCRIPT -->
 <script>
 document.getElementById("form-registro").addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-    // ✅ GUARDAR DATOS DEL CLIENTE
-    const nombre = document.getElementById("nombre").value;
-    const email = document.getElementById("email").value;
-    const telefono = document.getElementById("telefono").value;
-    const direccion = document.getElementById("direccion").value;
+  e.preventDefault();
+  const nombre = document.getElementById("nombre").value;
+  const email = document.getElementById("email").value;
+  const telefono = document.getElementById("telefono").value;
+  const direccion = document.getElementById("direccion").value;
 
-    const cliente = {nombre, email, telefono, direccion, fecha: new Date().toLocaleDateString()};
-    localStorage.setItem("cliente", JSON.stringify(cliente));
+  // Validaciones extra con regex
+  const soloNumeros = /^[0-9]+$/;
+  const correoValido = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+
+
+   if (!soloNumeros.test(telefono)) {
+    alert("⚠️ El teléfono debe contener solo números sin espacios.");
+    return;
+  }
+
+  if (telefono.length !== 10) {
+    alert("⚠️ El teléfono debe tener exactamente 10 dígitos.");
+    return;
+  }
+
+  if (!correoValido.test(email)) {
+    alert("⚠️ El correo debe contener un @ y un dominio válido.");
+    return;
+  }
+
+     const cliente = {nombre, email, telefono, direccion};
+  localStorage.setItem("cliente", JSON.stringify(cliente));
 
     // 🚀 VERIFICAR SI HAY CARRITO Y ENVIAR A WHATSAPP
     const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
@@ -95,7 +113,7 @@ ${carrito.map(item => `• ${item.nombre} (x${item.cantidad}) - $${(item.precio 
 ¡Gracias por tu compra! 😊`;
 
         // ⚠️ CAMBIA ESTE NÚMERO
-        const numeroWhatsApp = "524622711860";
+        const numeroWhatsApp = "524621106515";
         const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
         
         // ✅ LIMPIAR CARRITO + ABRIR WHATSAPP
@@ -112,8 +130,12 @@ ${carrito.map(item => `• ${item.nombre} (x${item.cantidad}) - $${(item.precio 
     } else {
         // Solo registro sin carrito
         document.getElementById("cliente-info").innerHTML = `
-            <h3>✅ ¡Registro Exitoso!</h3>
-            <p>¡Gracias por registrarte en Sweet Healthy!</p>
+    <h3>✅ Registro exitoso</h3>
+    <p><strong>👤 Nombre:</strong> ${nombre}</p>
+    <p><strong>📧 Email:</strong> ${email}</p>
+    <p><strong>📞 Teléfono:</strong> ${telefono}</p>
+    <p><strong>🏠 Dirección:</strong> ${direccion}</p>
+    <p>¡Gracias por registrarte en Dulce Delirio!</p>
             <a href="index.html" class="btn-principal" style="margin-top: 20px;">🏠 Ir al menú</a>
         `;
     }
@@ -123,21 +145,20 @@ ${carrito.map(item => `• ${item.nombre} (x${item.cantidad}) - $${(item.precio 
     this.reset();
 });
 
-// Cargar datos previos
+// Cargar datos guardados si existen
 window.onload = function() {
-    const clienteGuardado = JSON.parse(localStorage.getItem("cliente"));
-    if(clienteGuardado){
-        document.getElementById("cliente-info").innerHTML = `
-            <h3>👤 Ya estás registrado</h3>
-            <p><strong>Nombre:</strong> ${clienteGuardado.nombre}</p>
-            <p><strong>Teléfono:</strong> ${clienteGuardado.telefono}</p>
-            <a href="index.html" class="btn-principal" style="margin-top: 20px;">🛒 Ir a comprar</a>
-        `;
-        document.getElementById("cliente-info").style.display = "block";
-    }
+  const clienteGuardado = JSON.parse(localStorage.getItem("cliente"));
+  if(clienteGuardado){
+    document.getElementById("cliente-info").innerHTML = `
+      <h3>👤 Cliente registrado previamente</h3>
+      <p><strong>Nombre:</strong> ${clienteGuardado.nombre}</p>
+      <p><strong>Email:</strong> ${clienteGuardado.email}</p>
+      <p><strong>Teléfono:</strong> ${clienteGuardado.telefono}</p>
+      <p><strong>Dirección:</strong> ${clienteGuardado.direccion}</p>
+    `;
+  }
 }
 </script>
 
 </body>
 </html>
-
